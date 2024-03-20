@@ -2,68 +2,57 @@ package com.ohgiraffers.practice.looping;
 
 import java.util.Scanner;
 
-public class Application10 {
+public class Application9 {
 
-    public static void main(String[] args) {
-
-        /* 어떤 문장의 각 알파벳을 일정한 거리만큼 밀어서
-         * 다른 알파벳으로 바꾸는 암호화 방식을 시저 암호라고 합니다.
+        /* 문자열을 하나 입력 받고,
+         * 검색할 문자형을 하나 입력 받아
+         * 입력받은 문자열에 검색할 문자가 몇 개 포함되어 있는지를 출력하는 프로그램을 만드세요.
          *
-         * A를 3만큼 밀면 D가 되고, z를 1만큼 밀면 a가 됩니다.
-         * 또한 공백문자는 변경되지 않습니다.
+         * 단, 문자열에 영문자가 아닌 문자가 섞여 있는 경우에는
+         * 검색할 문자를 입력받지 않고 "영문자가 아닌 문자가 포함되어 있습니다." 출력 후 프로그램을 종료하세요.
          *
-         * 문자열 1개를 입력 받고,
-         * 얼만큼 문자를 밀지 알려주는 0보다 큰 정수를 1개 입력 받아
-         * 암호문을 작성하는 프로그램을 만들어 보세요.
-         * 단, 숫자가 27인 경우는 1칸을 밀게 됩니다. (알파벳은 26글자이기 때문입니다.)
+         * 또한 일치하는 문자의 경우 대소문자를 구분합니다.
          *
+         * -- 프로그램 예시 --
+         *
+         * -- 정상 동작의 경우 --
          * -- 입력 예시 --
-         * 문자열을 입력하세요 : a B z
-         * 숫자를 입력하세요 : 4
+         * 문자열 입력 : apple
+         * 문자 입력 : p
          *
          * -- 출력 예시 --
-         * e F d
+         * 포함된 갯수 : 1개
          *
+         * --------------------
+         * -- 영문자가 아닌 문자 포함된 경우 --
          * -- 입력 예시 --
-         * 문자열을 입력하세요 : a B z
-         * 숫자를 입력하세요 : 27
+         * 문자열 입력 : app2le
          *
          * -- 출력 예시 --
-         * b C a
+         * 영문자가 아닌 문자가 포함되어 있습니다.
          * */
 
+    public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
 
-        System.out.print("문자열을 입력하세요 : ");
+        System.out.print("문자열 입력: ");
         String inputString = scanner.nextLine();
 
-        System.out.print("숫자를 입력하세요 : ");
-        int shift = scanner.nextInt();
-        shift %= 26;
+        if (!inputString.matches("[a-zA-Z]+")) {
+            System.out.println("영문자가 아닌 문자가 포함되어 있습니다.");
+            return;
+        }
 
-        scanner.close();
+        System.out.print("문자 입력: ");
+        char searchChar = scanner.nextLine().charAt(0);
 
-        StringBuilder encryptedString = new StringBuilder();
-
+        int count = 0;
         for (int i = 0; i < inputString.length(); i++) {
-            char currentChar = inputString.charAt(i);
-
-            if (Character.isLetter(currentChar)) {
-                char encryptedChar = (char) (currentChar + shift);
-
-
-                if ((Character.isLowerCase(currentChar) && encryptedChar > 'z')
-                        || (Character.isUpperCase(currentChar) && encryptedChar > 'Z')) {
-                    encryptedChar -= 26;
-                }
-
-                encryptedString.append(encryptedChar);
-            } else {
-
-                encryptedString.append(currentChar);
+            if (inputString.charAt(i) == searchChar) {
+                count++;
             }
         }
 
-        System.out.println(encryptedString.toString());
+        System.out.println("포함된 갯수: " + count);
     }
 }
