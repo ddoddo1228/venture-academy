@@ -43,6 +43,40 @@
           </set>
         </option>
       </GradleProjectSettings>
+      <GradleProjectSettings>
+        <option name="externalProjectPath" value="$PROJECT_DIR$/chap06-class-and-object-lecture-source" />
+        <option name="modules">
+          <set>
+            <option value="$PROJECT_DIR$/chap06-class-and-object-lecture-source" />
+          </set>
+        </option>
+      </GradleProjectSettings>
+      <GradleProjectSettings>
+        <option name="externalProjectPath" value="$PROJECT_DIR$/chap07-object-array-lecture-source" />
+        <option name="modules">
+          <set>
+            <option value="$PROJECT_DIR$/chap07-object-array-lecture-source" />
+          </set>
+        </option>
+      </GradleProjectSettings>
+      <GradleProjectSettings>
+        <option name="externalProjectPath" value="$PROJECT_DIR$/chap08-inheritance-lecture-source" />
+        <option name="gradleHome" value="" />
+        <option name="modules">
+          <set>
+            <option value="$PROJECT_DIR$/chap08-inheritance-lecture-source" />
+          </set>
+        </option>
+      </GradleProjectSettings>
+      <GradleProjectSettings>
+        <option name="externalProjectPath" value="$PROJECT_DIR$/chap09-polymorphism-lecture-source" />
+        <option name="gradleHome" value="" />
+        <option name="modules">
+          <set>
+            <option value="$PROJECT_DIR$/chap09-polymorphism-lecture-source" />
+          </set>
+        </option>
+      </GradleProjectSettings>
     </option>
     <option name="parallelModelFetch" value="true" />
   </component>
